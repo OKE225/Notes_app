@@ -1,32 +1,50 @@
 import { useEffect, useState } from "react";
-import HomeHeader from "../components/HomeHeader";
 import toast from "react-hot-toast";
-import NotesList from "../components/NotesList";
+import HomeContent from "../components/layout/HomeContent";
+import HomeSidebar from "../components/layout/HomeSidebar";
+
+interface Note {
+  _id: string;
+  title: string;
+  content: string;
+  favorite: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
 
 const Home = () => {
-  const [notes, setNotes] = useState<string>();
+  const [notes, setNotes] = useState<Note[]>([]);
 
   useEffect(() => {
-    const fetchData = fetch("http://localhost:5001/api")
-      .then((response) => response.json())
-      .then((data) => data.message);
+    const fetchNotesPromise = async () => {
+      const response = await fetch("http://localhost:5001/api");
+
+      if (!response.ok)
+        throw new Error(`HTTP error! status: ${response.status}`);
+
+      return response.json();
+    };
 
     toast
-      .promise(fetchData, {
-        loading: "Loading...",
-        success: "Success!",
-        error: "Failed to fetch notes",
+      .promise(fetchNotesPromise(), {
+        loading: "Loading notes...",
+        success: "Notes loaded successfully!",
+        error: "Failed to loaded notes",
       })
       .then((data) => setNotes(data))
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(`Error fetching notes: ${error}`);
+        setNotes([]);
+      });
   }, []);
 
-  const showNotesList = notes && <NotesList notes={notes} />;
+  console.log(notes);
 
   return (
-    <div className="p-5">
-      <HomeHeader />
-      {showNotesList}
+    <div className="flex flex-row-reverse justify-end">
+      <HomeContent notes={notes} />
+      <HomeSidebar />
+      {/* {notes && <AllNotes notes={notes} />} */}
     </div>
   );
 };
