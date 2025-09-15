@@ -1,11 +1,4 @@
-interface Note {
-  _id: string;
-  title: string;
-  content: string;
-  favorite: boolean;
-  createdAt: string;
-  updatedAt: string;
-}
+import type Note from "../../types/note";
 
 interface Props {
   notes: Note[];
@@ -15,7 +8,7 @@ const AllNotes = ({ notes }: Props) => {
   return (
     <div>
       {notes.map((note) => (
-        <div>{note.title}</div>
+        <div key={note._id}>{note.title}</div>
       ))}
     </div>
   );

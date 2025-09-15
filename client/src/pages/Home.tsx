@@ -2,15 +2,7 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import HomeContent from "../components/layout/HomeContent";
 import HomeSidebar from "../components/layout/HomeSidebar";
-
-interface Note {
-  _id: string;
-  title: string;
-  content: string;
-  favorite: boolean;
-  createdAt: string;
-  updatedAt: string;
-}
+import type Note from "../types/note";
 
 const Home = () => {
   const [notes, setNotes] = useState<Note[]>([]);
@@ -37,8 +29,6 @@ const Home = () => {
         setNotes([]);
       });
   }, []);
-
-  console.log(notes);
 
   return (
     <div className="flex flex-row-reverse justify-end">

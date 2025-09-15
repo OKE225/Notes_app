@@ -1,14 +1,6 @@
+import type Note from "../../types/note";
 import HomeHeader from "../HomeHeader";
 import AllNotes from "../notes/AllNotes";
-
-interface Note {
-  _id: string;
-  title: string;
-  content: string;
-  favorite: boolean;
-  createdAt: string;
-  updatedAt: string;
-}
 
 interface Props {
   notes: Note[];
