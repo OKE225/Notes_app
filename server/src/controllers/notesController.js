@@ -12,6 +12,11 @@ export const getAllNotes = async (req, res) => {
 
 export const addNote = async (req, res) => {
   try {
+    const { title, content } = req.body;
+    const note = new Note({ title, content });
+    const savedNote = note.save();
+
+    res.json({ savedNote });
   } catch (error) {
     console.error(`Error in addNote controller ${error}`);
     res.status(500).json({ message: "Internal server error" });
