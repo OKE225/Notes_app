@@ -1,12 +1,11 @@
-import { Toaster } from "react-hot-toast";
 import Home from "./pages/Home";
+import { Route, Routes } from "react-router";
 
 const App = () => {
   return (
-    <>
-      <Home />
-      <Toaster />
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
   );
 };
 
