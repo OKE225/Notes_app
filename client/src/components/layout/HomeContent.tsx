@@ -8,7 +8,7 @@ interface Props {
 
 const HomeContent = ({ notes }: Props) => {
   return (
-    <main className="w-full bg-stone-50 pl-10">
+    <main className="w-full bg-stone-50 px-10">
       <HomeHeader />
       <AllNotes notes={notes} />
     </main>
