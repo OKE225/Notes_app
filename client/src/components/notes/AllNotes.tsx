@@ -1,4 +1,6 @@
 import type Note from "../../types/note";
+import AddNoteCard from "./AddNoteCard";
+import NoteCard from "./NoteCard";
 
 interface Props {
   notes: Note[];
@@ -6,10 +8,11 @@ interface Props {
 
 const AllNotes = ({ notes }: Props) => {
   return (
-    <div>
+    <div className="grid grid-cols-4 gap-2 w-[100%] mt-10">
       {notes.map((note) => (
-        <div key={note._id}>{note.title}</div>
+        <NoteCard key={note._id} note={note} />
       ))}
+      <AddNoteCard />
     </div>
   );
 };
