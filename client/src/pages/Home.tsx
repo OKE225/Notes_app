@@ -18,11 +18,17 @@ const Home = () => {
     };
 
     toast
-      .promise(fetchNotesPromise(), {
-        loading: "Loading notes...",
-        success: "Notes loaded successfully!",
-        error: "Failed to loaded notes",
-      })
+      .promise(
+        fetchNotesPromise(),
+        {
+          loading: "Loading notes...",
+          success: "Notes loaded successfully!",
+          error: "Failed to loaded notes",
+        },
+        {
+          duration: 2500,
+        }
+      )
       .then((data) => setNotes(data))
       .catch((error) => {
         console.error(`Error fetching notes: ${error}`);
@@ -34,7 +40,6 @@ const Home = () => {
     <div className="flex flex-row-reverse justify-end">
       <HomeContent notes={notes} />
       <HomeSidebar />
-      {/* {notes && <AllNotes notes={notes} />} */}
     </div>
   );
 };
