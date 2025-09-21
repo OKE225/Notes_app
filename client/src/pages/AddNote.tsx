@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import api from "../lib/axios.ts";
+import { IoMdDownload } from "react-icons/io";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 const AddNote = () => {
   const [title, setTitle] = useState<string>("");
@@ -19,7 +21,9 @@ const AddNote = () => {
 
     try {
       await api.post("/addNote", { title, content });
-      toast.success("Note added successfully!");
+      toast.success("Note added successfully!", {
+        duration: 2500,
+      });
       navigate("/");
     } catch (error) {
       console.error(`Error adding note ${error}`);
@@ -27,27 +31,49 @@ const AddNote = () => {
     }
   };
 
+  const returnBack = (e: React.FormEvent) => {
+    e.preventDefault();
+    navigate("/");
+  };
+
   return (
-    <div className="bg-stone-50 w-full h-screen p-5">
-      <form onSubmit={handleSubmit}>
+    <>
+      <form
+        onSubmit={handleSubmit}
+        className="bg-stone-50 w-full h-screen flex flex-col">
+        <div className="border-b-2 bg-stone-100 border-b-stone-200">
+          <div className="flex justify-between w-[90%] mx-auto my-4">
+            <button
+              className="bg-slate-500 hover:bg-slate-600 px-5 py-1 shadow-lg text-white cursor-pointer rounded-full flex items-center"
+              onClick={returnBack}>
+              <IoMdArrowRoundBack className="mr-1" /> BACK
+            </button>
+            <button
+              type="submit"
+              className="bg-green-500 hover:bg-green-600 px-5 py-1 shadow-lg text-white rounded-full cursor-pointer flex items-center">
+              <IoMdDownload className="mr-1" /> SAVE
+            </button>
+          </div>
+        </div>
+
         <input
           type="text"
-          className="border p-1"
+          className="p-7 w-full text-5xl font-light focus-visible:outline-none"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Note Title"
         />
         <textarea
-          className="border px-1"
+          className="px-7 w-full resize-none h-[100%] text-md focus-visible:outline-none"
           value={content}
           onChange={(e) => setContent(e.target.value)}
           placeholder="Write your note here..."
           cols={100}
         />
-        <button type="submit">add</button>
       </form>
-    </div>
+    </>
   );
 };
 
 export default AddNote;
+//
