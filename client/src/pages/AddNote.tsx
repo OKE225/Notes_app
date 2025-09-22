@@ -20,7 +20,7 @@ const AddNote = () => {
     }
 
     try {
-      await api.post("/addNote", { title, content });
+      await api.post("/add", { title, content });
       toast.success("Note added successfully!", {
         duration: 2500,
       });
