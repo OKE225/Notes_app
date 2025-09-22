@@ -6,8 +6,8 @@ interface Props {
 
 const NoteCard = ({ note }: Props) => {
   return (
-    <div className="bg-slate-500 hover:bg-slate-600 shadow-lg p-5 rounded-lg cursor-pointer text-white font-light">
-      <h1 className="text-3xl mb-5">{note.title}</h1>
+    <div className="bg-blue-500 hover:bg-blue-600 shadow-lg p-4 rounded-lg cursor-pointer text-white font-light">
+      <h1 className="text-3xl mb-2">{note.title}</h1>
       <p className="text-md">{note.content}</p>
     </div>
   );

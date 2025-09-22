@@ -44,7 +44,7 @@ const AddNote = () => {
         <div className="border-b-2 bg-stone-100 border-b-stone-200">
           <div className="flex justify-between w-[90%] mx-auto my-4">
             <button
-              className="bg-slate-500 hover:bg-slate-600 px-5 py-1 shadow-lg text-white cursor-pointer rounded-full flex items-center"
+              className="bg-blue-500 hover:bg-blue-600 px-5 py-1 shadow-lg text-white cursor-pointer rounded-full flex items-center"
               onClick={returnBack}>
               <IoMdArrowRoundBack className="mr-1" /> BACK
             </button>
@@ -58,13 +58,13 @@ const AddNote = () => {
 
         <input
           type="text"
-          className="p-7 w-full text-5xl font-light focus-visible:outline-none"
+          className="p-5 w-full text-5xl font-light focus-visible:outline-none"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Note Title"
         />
         <textarea
-          className="px-7 w-full resize-none h-[100%] text-md focus-visible:outline-none"
+          className="px-5 w-full resize-none h-[100%] text-md focus-visible:outline-none"
           value={content}
           onChange={(e) => setContent(e.target.value)}
           placeholder="Write your note here..."
@@ -76,4 +76,3 @@ const AddNote = () => {
 };
 
 export default AddNote;
-//
