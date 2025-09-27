@@ -1,14 +1,14 @@
-import AddNote from "./pages/AddNote";
-import Home from "./pages/Home";
+import HomePage from "./pages/HomePage";
+import AddNotePage from "./pages/AddNotePage";
+import NoteDetailsPage from "./pages/NoteDetailsPage";
 import { Route, Routes } from "react-router";
-import NoteDetails from "./pages/NoteDetails";
 
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/add" element={<AddNote />} />
-      <Route path="/note/:id" element={<NoteDetails />} />
+      <Route path="/" element={<HomePage />} />
+      <Route path="/add" element={<AddNotePage />} />
+      <Route path="/note/:id" element={<NoteDetailsPage />} />
     </Routes>
   );
 };

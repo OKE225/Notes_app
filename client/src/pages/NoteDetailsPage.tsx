@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import api from "../lib/axios";
+import api from "../lib/axios.ts";
 import toast from "react-hot-toast";
-import type Note from "../types/note";
+import type Note from "../types/note.ts";
 import { IoMdDownload } from "react-icons/io";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { useGoToHomePage } from "../hooks/useGoToHomePage.ts";
 
-const NoteDetails = () => {
+const NoteDetailsPage = () => {
   const [note, setNote] = useState<Note>();
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>(``);
@@ -92,4 +92,4 @@ const NoteDetails = () => {
   );
 };
 
-export default NoteDetails;
+export default NoteDetailsPage;

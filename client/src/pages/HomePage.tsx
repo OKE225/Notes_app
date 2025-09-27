@@ -4,7 +4,7 @@ import HomeContent from "../components/layout/HomeContent";
 import HomeSidebar from "../components/layout/HomeSidebar";
 import type Note from "../types/note";
 
-const Home = () => {
+const HomePage = () => {
   const [notes, setNotes] = useState<Note[]>([]);
 
   useEffect(() => {
@@ -44,4 +44,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

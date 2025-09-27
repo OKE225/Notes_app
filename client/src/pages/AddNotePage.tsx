@@ -6,7 +6,7 @@ import { IoMdDownload } from "react-icons/io";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { useGoToHomePage } from "../hooks/useGoToHomePage.ts";
 
-const AddNote = () => {
+const AddNotePage = () => {
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>(``);
 
@@ -71,4 +71,4 @@ const AddNote = () => {
   );
 };
 
-export default AddNote;
+export default AddNotePage;
