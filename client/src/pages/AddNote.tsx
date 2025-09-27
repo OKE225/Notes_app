@@ -16,7 +16,7 @@ const AddNote = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!title || !content) {
+    if (!title.trim() || !content.trim()) {
       toast.error("Title and content are required");
       return;
     }

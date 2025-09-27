@@ -37,7 +37,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex flex-row-reverse justify-end">
+    <div className="flex w-full min-h-screen flex-row-reverse justify-end">
       <HomeContent notes={notes} />
       <HomeSidebar />
     </div>
