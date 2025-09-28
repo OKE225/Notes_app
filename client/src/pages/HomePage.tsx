@@ -6,6 +6,7 @@ import type Note from "../types/note";
 
 const HomePage = () => {
   const [notes, setNotes] = useState<Note[]>([]);
+  const [notesCount, setNotesCount] = useState<number>(0);
 
   useEffect(() => {
     const fetchNotesPromise = async () => {
@@ -29,7 +30,10 @@ const HomePage = () => {
           duration: 2500,
         }
       )
-      .then((data) => setNotes(data))
+      .then((data) => {
+        setNotes(data.notes);
+        setNotesCount(data.count);
+      })
       .catch((error) => {
         console.error(`Error fetching notes: ${error}`);
         setNotes([]);
@@ -38,7 +42,7 @@ const HomePage = () => {
 
   return (
     <div className="flex w-full min-h-screen flex-row-reverse justify-end">
-      <HomeContent notes={notes} />
+      <HomeContent notes={notes} notesCount={notesCount} />
       <HomeSidebar />
     </div>
   );

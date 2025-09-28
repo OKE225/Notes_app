@@ -3,7 +3,8 @@ import Note from "../models/Note.js";
 export const getAllNotes = async (req, res) => {
   try {
     const notes = await Note.find({}).sort({ updatedAt: -1 });
-    res.status(200).json(notes);
+    const notesCount = notes.length;
+    res.status(200).json({ count: notesCount, notes });
   } catch (error) {
     console.error(`Error in getAllNotes controller ${error}`);
     res.status(500).json({ message: "Internal server error" });
