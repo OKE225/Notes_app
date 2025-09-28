@@ -57,14 +57,13 @@ const NoteForm = ({ method, idNote, note }: Props) => {
         <div className="flex justify-between w-[90%] mx-auto my-4">
           <button
             className="bg-blue-500 hover:bg-blue-600  px-5 py-1 shadow-lg text-white cursor-pointer rounded-full flex items-center"
-            // className="bg-blue-500 hover:bg-blue-100 hover:outline-2 hover:outline-blue-500 box-content px-5 py-1 shadow-lg text-white hover:text-blue-500 cursor-pointer rounded-full flex items-center"
             onClick={goToHomePage}>
-            <IoMdArrowRoundBack className="mr-1" /> Back
+            <IoMdArrowRoundBack className="mr-1 text-md" /> Back
           </button>
           <button
             type="submit"
             className="bg-green-500 hover:bg-green-600 px-5 py-1 shadow-lg text-white rounded-full cursor-pointer flex items-center">
-            <IoMdDownload className="mr-1" /> Save
+            <IoMdDownload className="mr-1 text-md" /> Save
           </button>
         </div>
       </div>
