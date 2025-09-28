@@ -6,7 +6,7 @@ interface Props {
   notes: Note[];
 }
 
-const AllNotes = ({ notes }: Props) => {
+const ShowAllNotes = ({ notes }: Props) => {
   return (
     <div className="grid grid-cols-4 gap-4 w-full py-10">
       {notes.map((note) => (
@@ -17,4 +17,4 @@ const AllNotes = ({ notes }: Props) => {
   );
 };
 
-export default AllNotes;
+export default ShowAllNotes;

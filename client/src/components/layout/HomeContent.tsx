@@ -1,6 +1,6 @@
 import type Note from "../../types/note";
 import HomeHeader from "../HomeHeader";
-import AllNotes from "../notes/AllNotes";
+import ShowAllNotes from "../notes/ShowAllNotes";
 
 interface Props {
   notes: Note[];
@@ -10,7 +10,7 @@ const HomeContent = ({ notes }: Props) => {
   return (
     <main className="w-full min-h-screen bg-stone-50 px-10">
       <HomeHeader />
-      <AllNotes notes={notes} />
+      <ShowAllNotes notes={notes} />
     </main>
   );
 };
