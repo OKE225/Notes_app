@@ -31,7 +31,11 @@ const HomePage = () => {
         }
       )
       .then((data) => {
-        setNotes(data.notes);
+        setNotes(
+          data.notes.sort((a: Note, b: Note) =>
+            a.favorite === b.favorite ? 0 : a.favorite ? -1 : 1
+          )
+        );
         setNotesCount(data.count);
       })
       .catch((error) => {
