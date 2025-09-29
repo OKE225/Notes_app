@@ -7,7 +7,7 @@ interface Props {
 const NotesCounter = ({ notesCount }: Props) => {
   return (
     <div className="flex items-center">
-      <CiStickyNote className="mr-0.5 text-md" />
+      <CiStickyNote className="mr-0.5 text-xl" />
       <span className="text-xl font-light">{notesCount} notes</span>
     </div>
   );
