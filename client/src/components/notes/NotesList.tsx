@@ -4,13 +4,14 @@ import NoteCard from "./NoteCard";
 
 interface Props {
   notes: Note[];
+  setNotes: React.Dispatch<React.SetStateAction<Note[]>>;
 }
 
-const NotesList = ({ notes }: Props) => {
+const NotesList = ({ notes, setNotes }: Props) => {
   return (
     <div className="grid grid-cols-4 gap-4 w-full py-10">
       {notes.map((note) => (
-        <NoteCard key={note._id} note={note} />
+        <NoteCard key={note._id} note={note} setNotes={setNotes} />
       ))}
       <AddNoteCard />
     </div>
