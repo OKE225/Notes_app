@@ -13,8 +13,8 @@ export const getAllNotes = async (req, res) => {
 
 export const addNote = async (req, res) => {
   try {
-    const { title, content } = req.body;
-    const note = new Note({ title, content });
+    const { title, content, favorite } = req.body;
+    const note = new Note({ title, content, favorite });
     const savedNote = note.save();
 
     res.json({ savedNote });
@@ -36,10 +36,11 @@ export const getNoteById = async (req, res) => {
 
 export const updateNote = async (req, res) => {
   try {
-    const { title, content } = req.body;
+    const { title, content, favorite } = req.body;
     const updateNote = await Note.findByIdAndUpdate(req.params.id, {
       title,
       content,
+      favorite,
     });
 
     res.json(updateNote);

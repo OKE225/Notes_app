@@ -16,6 +16,9 @@ interface Props {
 const NoteForm = ({ method, idNote, note }: Props) => {
   const [title, setTitle] = useState<string>(note ? note.title : "");
   const [content, setContent] = useState<string>(note ? note.content : ``);
+  const [isFavorite, setIsFavorite] = useState<boolean>(
+    note ? note.favorite : false
+  );
 
   const navigate = useNavigate();
 
@@ -31,12 +34,16 @@ const NoteForm = ({ method, idNote, note }: Props) => {
 
     try {
       if (method === "add") {
-        await api.post("/add", { title, content });
+        await api.post("/add", { title, content, favorite: isFavorite });
         toast.success("Note added successfully!", {
           duration: 2500,
         });
       } else if (method === "edit") {
-        await api.put(`/note/${idNote}`, { title, content });
+        await api.put(`/note/${idNote}`, {
+          title,
+          content,
+          favorite: isFavorite,
+        });
         toast.success("Note updated successfully!", {
           duration: 2500,
         });
@@ -67,10 +74,21 @@ const NoteForm = ({ method, idNote, note }: Props) => {
           </button>
         </div>
       </div>
-
+      <span className="px-5 pt-5">
+        <input
+          type="checkbox"
+          name="favorite"
+          id="favorite"
+          checked={isFavorite}
+          onChange={(e) => setIsFavorite(e.target.checked)}
+        />
+        <label htmlFor="favorite" className="ml-2 text-stone-600">
+          Add to favorite
+        </label>
+      </span>
       <input
         type="text"
-        className="p-5 w-full text-5xl font-light focus-visible:outline-none"
+        className="px-5 pb-2 pt-5 w-full text-5xl font-light focus-visible:outline-none"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Note Title"
