@@ -14,7 +14,7 @@ const NoteCard = ({ note }: Props) => {
       <h1 className="text-3xl pb-1 line-clamp-2">{note.title}</h1>
       <p className="text-md mt-1 line-clamp-4">{note.content}</p>
       {note.favorite && (
-        <FaHeart className="text-2xl absolute right-5 top-5 text-rose-500 drop-shadow-2xl drop-shadow-rose-500" />
+        <FaHeart className="text-xl absolute right-4 top-4 text-white" />
       )}
     </Link>
   );
