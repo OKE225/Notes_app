@@ -28,7 +28,7 @@ const NoteForm = ({ method, idNote, note }: Props) => {
     e.preventDefault();
 
     if (!title.trim() || !content.trim()) {
-      toast.error("Title and content are required");
+      toast.error("Title and content are required", { duration: 2500 });
       return;
     }
 
@@ -36,6 +36,7 @@ const NoteForm = ({ method, idNote, note }: Props) => {
       if (method === "add") {
         await api.post("/add", { title, content, favorite: isFavorite });
         toast.success("Note added successfully!", {
+          icon: "📄",
           duration: 2500,
         });
       } else if (method === "edit") {
@@ -45,6 +46,7 @@ const NoteForm = ({ method, idNote, note }: Props) => {
           favorite: isFavorite,
         });
         toast.success("Note updated successfully!", {
+          icon: "📄",
           duration: 2500,
         });
       }
@@ -52,7 +54,7 @@ const NoteForm = ({ method, idNote, note }: Props) => {
       navigate("/");
     } catch (error) {
       console.error(`Error: ${error}`);
-      toast.error("Failed");
+      toast.error("Failed", { duration: 2500 });
     }
   };
 

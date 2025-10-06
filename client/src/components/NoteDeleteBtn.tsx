@@ -17,10 +17,10 @@ const NoteDeleteBtn = ({ note, setNotes }: Props) => {
     try {
       await api.delete(`/${id}`);
       setNotes((prevState) => prevState.filter((note) => note._id !== id));
-      toast.success("Note deleted successfully");
+      toast.success("Note deleted successfully", { icon: "🗑", duration: 2500 });
     } catch (error) {
       console.error(`Error in handleDeleteNote ${error}`);
-      toast.error("Failed to delete note");
+      toast.error("Failed to delete note", { duration: 2500 });
     }
   };
 

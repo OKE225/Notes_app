@@ -17,7 +17,7 @@ const NoteDetailsPage = () => {
         setNote(response.data);
       } catch (error) {
         console.error(`Error in fetching note ${error}`);
-        toast.error("Failed to fetch the note");
+        toast.error("Failed to fetch the note", { duration: 2500 });
       }
     };
 
