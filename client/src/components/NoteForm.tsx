@@ -61,9 +61,38 @@ const NoteForm = ({ method, idNote, note }: Props) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-stone-50 w-full h-screen flex flex-col">
-      <div className="border-b-2 bg-stone-100 border-b-stone-200">
-        <div className="flex justify-between w-[90%] mx-auto my-4">
+      className="bg-stone-50 w-full h-screen flex flex-row-reverse">
+      <div className="h-screen w-[100%] flex flex-col items-start">
+        <div className="m-2.5 mt-5">
+          <input
+            type="checkbox"
+            name="favorite"
+            id="favorite"
+            checked={isFavorite}
+            onChange={(e) => setIsFavorite(e.target.checked)}
+          />
+          <label htmlFor="favorite" className="ml-2 text-stone-800">
+            Add to favorite
+          </label>
+        </div>
+        <input
+          type="text"
+          className="px-2.5 w-full text-5xl font-light focus-visible:outline-none"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Note Title"
+        />
+        <textarea
+          className="px-2.5 w-full resize-none h-[100%] text-md focus-visible:outline-none"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          placeholder="Write your note here..."
+          cols={100}
+        />
+      </div>
+
+      <aside className="border-r-2 bg-stone-100 border-r-stone-200">
+        <div className="flex flex-col items-center justify-between w-[125px] h-screen py-5">
           <button
             className="bg-blue-500 hover:bg-blue-600  px-5 py-1 shadow-lg text-white cursor-pointer rounded-full flex items-center"
             onClick={goToHomePage}>
@@ -75,33 +104,7 @@ const NoteForm = ({ method, idNote, note }: Props) => {
             <IoMdDownload className="mr-1 text-md" /> Save
           </button>
         </div>
-      </div>
-      <span className="px-5 pt-5">
-        <input
-          type="checkbox"
-          name="favorite"
-          id="favorite"
-          checked={isFavorite}
-          onChange={(e) => setIsFavorite(e.target.checked)}
-        />
-        <label htmlFor="favorite" className="ml-2 text-stone-600">
-          Add to favorite
-        </label>
-      </span>
-      <input
-        type="text"
-        className="px-5 pb-2 pt-5 w-full text-5xl font-light focus-visible:outline-none"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Note Title"
-      />
-      <textarea
-        className="px-5 w-full resize-none h-[100%] text-md focus-visible:outline-none"
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-        placeholder="Write your note here..."
-        cols={100}
-      />
+      </aside>
     </form>
   );
 };
