@@ -94,14 +94,14 @@ const NoteForm = ({ method, idNote, note }: Props) => {
       <aside className="border-r-2 bg-stone-100 border-r-stone-200">
         <div className="flex flex-col items-center justify-between w-[125px] h-screen py-5">
           <button
-            className="bg-blue-500 hover:bg-blue-600  px-5 py-1 shadow-lg text-white cursor-pointer rounded-full flex items-center"
+            className="bg-blue-500 hover:bg-blue-600 px-5 py-1 shadow-lg text-white cursor-pointer rounded-full flex items-center"
             onClick={goToHomePage}>
-            <IoMdArrowRoundBack className="mr-1 text-md" /> Back
+            <IoMdArrowRoundBack className="-ml-1 mr-1 text-md" /> Back
           </button>
           <button
             type="submit"
             className="bg-green-500 hover:bg-green-600 px-5 py-1 shadow-lg text-white rounded-full cursor-pointer flex items-center">
-            <IoMdDownload className="mr-1 text-md" /> Save
+            <IoMdDownload className="-ml-1 mr-1 text-md" /> Save
           </button>
         </div>
       </aside>
