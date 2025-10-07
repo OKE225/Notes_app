@@ -63,7 +63,7 @@ const NoteForm = ({ method, idNote, note }: Props) => {
       onSubmit={handleSubmit}
       className="bg-stone-50 w-full h-screen flex flex-row-reverse">
       <div className="h-screen w-[100%] flex flex-col items-start">
-        <div className="m-2.5 mt-5">
+        <div className="m-2.5 mt-5 max-lg:mt-1">
           <input
             type="checkbox"
             name="favorite"
@@ -77,7 +77,7 @@ const NoteForm = ({ method, idNote, note }: Props) => {
         </div>
         <input
           type="text"
-          className="px-2.5 w-full text-5xl font-light focus-visible:outline-none"
+          className="px-2.5 w-full text-5xl font-light focus-visible:outline-none max-lg:text-4xl"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Note Title"
@@ -92,16 +92,18 @@ const NoteForm = ({ method, idNote, note }: Props) => {
       </div>
 
       <aside className="border-r-2 bg-stone-100 border-r-stone-200">
-        <div className="flex flex-col items-center justify-between w-[125px] h-screen py-5">
+        <div className="flex flex-col items-center justify-between w-[130px] max-lg:w-[65px] h-screen py-5">
           <button
-            className="bg-blue-500 hover:bg-blue-600 px-5 py-1 shadow-lg text-white cursor-pointer rounded-full flex items-center"
+            className="bg-slate-500 hover:bg-slate-600 px-5 py-1 shadow-lg text-white cursor-pointer rounded-full flex items-center max-lg:text-xl max-lg:p-2"
             onClick={goToHomePage}>
-            <IoMdArrowRoundBack className="-ml-1 mr-1 text-md" /> Back
+            <IoMdArrowRoundBack className="-ml-1 mr-1 text-md max-lg:m-0" />{" "}
+            <span className="max-lg:hidden">Back</span>
           </button>
           <button
             type="submit"
-            className="bg-green-500 hover:bg-green-600 px-5 py-1 shadow-lg text-white rounded-full cursor-pointer flex items-center">
-            <IoMdDownload className="-ml-1 mr-1 text-md" /> Save
+            className="bg-green-500 hover:bg-green-600 px-5 py-1 shadow-lg text-white rounded-full cursor-pointer flex items-center max-lg:text-xl max-lg:p-2">
+            <IoMdDownload className="-ml-1 mr-1 text-md max-lg:m-0" />{" "}
+            <span className="max-lg:hidden">Save</span>
           </button>
         </div>
       </aside>
