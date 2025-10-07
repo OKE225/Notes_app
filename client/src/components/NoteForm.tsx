@@ -61,7 +61,7 @@ const NoteForm = ({ method, idNote, note }: Props) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-stone-50 w-full h-screen flex flex-row-reverse">
+      className="bg-stone-50 w-full h-screen flex flex-row-reverse dark:bg-stone-950">
       <div className="h-screen w-[100%] flex flex-col items-start">
         <div className="m-2.5 mt-5 max-lg:mt-1">
           <input
@@ -71,19 +71,21 @@ const NoteForm = ({ method, idNote, note }: Props) => {
             checked={isFavorite}
             onChange={(e) => setIsFavorite(e.target.checked)}
           />
-          <label htmlFor="favorite" className="ml-2 text-stone-800">
+          <label
+            htmlFor="favorite"
+            className="ml-2 text-stone-800 dark:text-stone-200">
             Add to favorite
           </label>
         </div>
         <input
           type="text"
-          className="px-2.5 w-full text-5xl font-light focus-visible:outline-none max-lg:text-4xl"
+          className="px-2.5 w-full text-5xl font-light focus-visible:outline-none max-lg:text-4xl text-stone-950 dark:text-stone-50"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Note Title"
         />
         <textarea
-          className="px-2.5 w-full resize-none h-[100%] text-md focus-visible:outline-none"
+          className="px-2.5 w-full resize-none h-[100%] text-md focus-visible:outline-none text-stone-950 dark:text-stone-50"
           value={content}
           onChange={(e) => setContent(e.target.value)}
           placeholder="Write your note here..."
@@ -91,17 +93,17 @@ const NoteForm = ({ method, idNote, note }: Props) => {
         />
       </div>
 
-      <aside className="border-r-2 bg-stone-100 border-r-stone-200">
+      <aside className="border-r-2 bg-stone-100 border-r-stone-200 dark:bg-stone-900 dark:border-r-stone-800">
         <div className="flex flex-col items-center justify-between w-[130px] max-lg:w-[65px] h-screen py-5">
           <button
-            className="bg-slate-500 hover:bg-slate-600 px-5 py-1 shadow-lg text-white cursor-pointer rounded-full flex items-center max-lg:text-xl max-lg:p-2"
+            className="bg-slate-500 hover:bg-slate-600 px-5 py-1 shadow-lg text-white cursor-pointer rounded-full flex items-center max-lg:text-xl max-lg:p-2 dark:bg-slate-700 dark:hover:bg-slate-800"
             onClick={goToHomePage}>
             <IoMdArrowRoundBack className="-ml-1 mr-1 text-md max-lg:m-0" />{" "}
             <span className="max-lg:hidden">Back</span>
           </button>
           <button
             type="submit"
-            className="bg-green-500 hover:bg-green-600 px-5 py-1 shadow-lg text-white rounded-full cursor-pointer flex items-center max-lg:text-xl max-lg:p-2">
+            className="bg-green-500 hover:bg-green-600 px-5 py-1 shadow-lg text-white rounded-full cursor-pointer flex items-center max-lg:text-xl max-lg:p-2 dark:bg-green-600 dark:hover:bg-green-700">
             <IoMdDownload className="-ml-1 mr-1 text-md max-lg:m-0" />{" "}
             <span className="max-lg:hidden">Save</span>
           </button>

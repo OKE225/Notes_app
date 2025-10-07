@@ -26,9 +26,9 @@ const NoteDeleteBtn = ({ note, setNotes }: Props) => {
 
   return (
     <button
-      className="cursor-pointer p-2.5 rounded-full bg-red-500 absolute right-2 bottom-1 hover:bg-red-700"
+      className="cursor-pointer p-2.5 rounded-full bg-red-500 absolute right-2 bottom-1 hover:bg-red-700 dark:bg-red-600"
       onClick={(e) => handleDeleteNote(e, note._id)}>
-      <FaTrash className="text-lg" />
+      <FaTrash className="text-lg text-stone-50" />
     </button>
   );
 };

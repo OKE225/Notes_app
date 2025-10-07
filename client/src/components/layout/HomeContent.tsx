@@ -9,7 +9,7 @@ interface Props {
 
 const HomeContent = ({ notes, setNotes }: Props) => {
   return (
-    <main className="w-full min-h-screen bg-stone-50 px-4">
+    <main className="w-full min-h-screen bg-stone-50 px-4 dark:bg-stone-950">
       <HomeHeader />
       <NotesList notes={notes} setNotes={setNotes} />
     </main>

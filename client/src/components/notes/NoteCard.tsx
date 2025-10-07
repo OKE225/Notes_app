@@ -12,11 +12,11 @@ const NoteCard = ({ note, setNotes }: Props) => {
   return (
     <Link
       to={`/note/${note._id}`}
-      className="bg-blue-500 hover:bg-blue-600 min-h-[175px] shadow-lg p-4 rounded-lg cursor-pointer text-white font-light overflow-hidden relative">
+      className="bg-blue-500 hover:bg-blue-600 min-h-[175px] shadow-lg p-4 rounded-lg cursor-pointer text-stone-50 font-light overflow-hidden relative dark:bg-sky-500 dark:hover:bg-sky-600">
       <h1 className="text-3xl pb-1 line-clamp-2">{note.title}</h1>
-      <p className="text-md mt-1 line-clamp-3">{note.content}</p>
+      <p className="text-xl mt-1 line-clamp-2">{note.content}</p>
       {note.favorite && (
-        <FaHeart className="text-xl absolute right-4 top-4 text-white" />
+        <FaHeart className="text-xl absolute right-4 top-4 text-stone-50" />
       )}
       <NoteDeleteBtn note={note} setNotes={setNotes} />
     </Link>
