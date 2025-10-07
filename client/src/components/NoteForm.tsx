@@ -94,7 +94,7 @@ const NoteForm = ({ method, idNote, note }: Props) => {
       </div>
 
       <aside className="border-r-2 bg-stone-100 border-r-stone-200 dark:bg-stone-900 dark:border-r-stone-800">
-        <div className="flex flex-col items-center justify-between w-[130px] max-lg:w-[65px] h-screen py-5">
+        <div className="flex flex-col items-center justify-between w-[135px] max-lg:w-[65px] h-screen py-5">
           <button
             className="bg-slate-500 hover:bg-slate-600 px-5 py-1 shadow-lg text-white cursor-pointer rounded-full flex items-center max-lg:text-xl max-lg:p-2 dark:bg-slate-700 dark:hover:bg-slate-800"
             onClick={goToHomePage}>
@@ -103,7 +103,7 @@ const NoteForm = ({ method, idNote, note }: Props) => {
           </button>
           <button
             type="submit"
-            className="bg-green-500 hover:bg-green-600 px-5 py-1 shadow-lg text-white rounded-full cursor-pointer flex items-center max-lg:text-xl max-lg:p-2 dark:bg-green-600 dark:hover:bg-green-700">
+            className="bg-green-500 hover:bg-green-600 px-5 py-1 shadow-lg text-white rounded-full cursor-pointer flex items-center max-lg:text-xl max-lg:p-2 dark:bg-green-600 dark:hover:bg-green-800">
             <IoMdDownload className="-ml-1 mr-1 text-md max-lg:m-0" />{" "}
             <span className="max-lg:hidden">Save</span>
           </button>
