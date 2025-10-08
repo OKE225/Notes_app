@@ -1,5 +1,7 @@
 # 📄 Notes app
 
+![GitHub License](https://img.shields.io/github/license/OKE225/Quiz_app?style=for-the-badge&labelColor=gainsboro&color=whitesmoke)
+
 This is a **MERN stack** web application. This is a simple **CRUD web application** for managing your notes. It allows users to **easily browse, add, and edit notes**. The home page displays the full list of notes.
 
 The project was create using **modern technologies**: the frontend is built with React, TypeScript, and TailwindCSS, while the backend runs on Node.js with the Express.js framework and uses MongoDB as the database.
@@ -23,6 +25,10 @@ _dark mode_
 
 ![Notes app - light mode](./docs/notes-light-mode.png)
 _light mode_
+
+## 📄 License
+
+The [MIT License](./LICENSE) (MIT). Please see License File for more information.
 
 ## 🔎 See Also
 
